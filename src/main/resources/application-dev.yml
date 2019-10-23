@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+spring:
+  # 只配置了账号、密码、数据库地址、连接驱动，因为默认使用的是 class com.zaxxer.hikari.HikariDataSource 数据源
+  datasource:
+    username: zhangp
+    password: 123456abAB&
+    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapping/*Mapping.xml
+  type-aliases-package: org.pp.springboot_mybatis.entity
+
+#showSql
+logging:
+  level:
+    org:
+      pp:
+        mapper: debug
