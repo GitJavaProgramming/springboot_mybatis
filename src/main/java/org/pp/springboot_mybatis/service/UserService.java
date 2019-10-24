@@ -14,4 +14,9 @@ public class UserService {
     public User Sel(int id) {
         return userMapper.Sel(id);
     }
+
+    //    @Transactional(propagation = Propagation.REQUIRED)
+    public int insertUser(User user) {
+        return userMapper.insertUser(user);
+    }
 }
