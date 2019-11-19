@@ -1,12 +1,12 @@
 package org.pp.springboot_mybatis.mapper;
 
-import org.pp.springboot_mybatis.entity.User;
+import org.pp.springboot_mybatis.entity.TestUser;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public interface UserMapper {
 
-    User Sel(int id);
+    TestUser Sel(int id);
 
-    int insertUser(User user);
+    int insertUser(TestUser user);
 }

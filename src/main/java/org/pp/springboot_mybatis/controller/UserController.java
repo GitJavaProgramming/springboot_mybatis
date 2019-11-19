@@ -1,6 +1,5 @@
 package org.pp.springboot_mybatis.controller;
 
-import org.pp.springboot_mybatis.entity.User;
 import org.pp.springboot_mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;

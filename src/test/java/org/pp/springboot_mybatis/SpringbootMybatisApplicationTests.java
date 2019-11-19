@@ -2,18 +2,21 @@ package org.pp.springboot_mybatis;
 
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
-import org.pp.springboot_mybatis.entity.User;
+import org.pp.springboot_mybatis.entity.TestUser;
 import org.pp.springboot_mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.annotation.Rollback;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -24,6 +27,9 @@ class SpringbootMybatisApplicationTests {
 
     @Autowired
     private UserService userService;
+
+    @Resource
+    private JdbcTemplate jdbcTemplate;
 
     @Test
     void loadDataSource() throws SQLException {
@@ -58,11 +64,30 @@ class SpringbootMybatisApplicationTests {
     @Transactional
 //    @Rollback(false)
     void validateTransactional() {
-        User user = new User();
+        TestUser user = new TestUser();
         user.setUserName("un1");
         user.setPassWord("pw1");
         user.setRealName("rn1");
         userService.insertUser(user);
     }
 
+    @Test
+    void testJdbcTemplate() {
+        String sql = "select * from user";
+        List<TestUser> userList = jdbcTemplate.query(sql, new RowMapper<TestUser>() {
+            @Override
+            public TestUser mapRow(ResultSet rs, int rowNum) throws SQLException {
+                TestUser user = new TestUser();
+                user.setId(rs.getInt("id"));
+                user.setUserName(rs.getString("userName"));
+                user.setPassWord(rs.getString("passWord"));
+                user.setRealName(rs.getString("realName"));
+                return user;
+            }
+        });
+        System.out.println("查询成功：");
+        for (TestUser user: userList) {
+            System.out.println("id:" + user.getId() + ", name:" + user.getUserName());
+        }
+    }
 }

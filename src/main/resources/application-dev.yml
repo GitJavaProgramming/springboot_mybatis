@@ -2,16 +2,26 @@ server:
   port: 8080
 
 spring:
-  # Ö»ÅäÖÃÁËÕËºÅ¡¢ÃÜÂë¡¢Êı¾İ¿âµØÖ·¡¢Á¬½ÓÇı¶¯£¬ÒòÎªÄ¬ÈÏÊ¹ÓÃµÄÊÇ class com.zaxxer.hikari.HikariDataSource Êı¾İÔ´
+  # åªé…ç½®äº†è´¦å·ã€å¯†ç ã€æ•°æ®åº“åœ°å€ã€è¿æ¥é©±åŠ¨ï¼Œå› ä¸ºé»˜è®¤ä½¿ç”¨çš„æ˜¯ class com.zaxxer.hikari.HikariDataSource æ•°æ®æº
   datasource:
-    username: zhangp
+    # mysqlè¿æ¥
+    username: root
     password: 123456abAB&
     url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
-    driver-class-name: com.mysql.jdbc.Driver
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # æ•°æ®åº“è¿æ¥æ± 
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapping.xml
   type-aliases-package: org.pp.springboot_mybatis.entity
+
+redis:
+  password:
+  port: 6379
+  host: localhost
+  database: O
+
+
 
 #showSql
 logging:
@@ -19,3 +29,4 @@ logging:
     org:
       pp:
         mapper: debug
+
