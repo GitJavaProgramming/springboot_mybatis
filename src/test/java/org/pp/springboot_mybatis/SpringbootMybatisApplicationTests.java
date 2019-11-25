@@ -101,8 +101,8 @@ class SpringbootMybatisApplicationTests {
 
     @Test
     void testRedisTemplate() {
-        stringRedisTemplate.opsForValue().set("testEnv", "testEnvValue");
+        stringRedisTemplate.opsForValue().set("testEnv", "redis:testEnvValue");
         String testEnv = stringRedisTemplate.opsForValue().get("testEnv");
-        System.out.println(testEnv);
+        System.out.println("redis查询：" + testEnv);
     }
 }

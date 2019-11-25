@@ -29,16 +29,10 @@ spring:
   redis:
     password: Redis!12345
     port: 6379
-    host: 192.168.0.107
+    host: 192.168.0.129
     timeout: 3000
     database: 0
 
-  #showSql
-  logging:
-    level:
-      org:
-        pp:
-          mapper: debug
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapping.xml
@@ -60,3 +54,10 @@ management:
   endpoint:
     health:
       show-details: always
+
+#showSql
+logging:
+  level:
+    org:
+      pp:
+        mapper: debug
