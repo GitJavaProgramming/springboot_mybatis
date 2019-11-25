@@ -6,6 +6,8 @@ import org.pp.springboot_mybatis.entity.TestUser;
 import org.pp.springboot_mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -31,6 +33,12 @@ class SpringbootMybatisApplicationTests {
     @Resource
     private JdbcTemplate jdbcTemplate;
 
+    @Autowired
+    private StringRedisTemplate stringRedisTemplate;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     @Test
     void loadDataSource() throws SQLException {
         System.out.println("数据源>>>>>>" + dataSource.getClass());
@@ -43,15 +51,15 @@ class SpringbootMybatisApplicationTests {
 
     /**
      * 隔离级别：
-     *
+     * <p>
      * 1、ISOLOCATION_DEFAULT:  数据库默认级别
      * 2、ISOLOCATION_READ_UNCOMMITTED: 允许读取未提交的读， 可能导致脏读，不可重复读，幻读
      * 3、ISOLOCATION_READ_COMMITTED:  允许读取已提交的读，可能导致不可重复读，幻读
      * 4、ISOLOCATION_REPEATABLE_READ : 不能能更新另一个事务修改单尚未提交(回滚)的数据，可能引起幻读
      * 5、ISOLOCATION_SERIALIZABLE: 序列执行效率低
-     *
+     * <p>
      * 传播级别：
-     *
+     * <p>
      * 1、PROPERGATION_MANDATORY:　方法必须运行在一个事务中，不存在事务则抛出异常
      * 2、PROPERGATION_NESTED:　　存在事务则运行在嵌套事务中，不存在则创建一个事务
      * 3、PROPERGATION_NEVER: 当前方法不能运行在事务中，存在事务则抛出异常
@@ -86,8 +94,15 @@ class SpringbootMybatisApplicationTests {
             }
         });
         System.out.println("查询成功：");
-        for (TestUser user: userList) {
+        for (TestUser user : userList) {
             System.out.println("id:" + user.getId() + ", name:" + user.getUserName());
         }
+    }
+
+    @Test
+    void testRedisTemplate() {
+        stringRedisTemplate.opsForValue().set("testEnv", "testEnvValue");
+        String testEnv = stringRedisTemplate.opsForValue().get("testEnv");
+        System.out.println(testEnv);
     }
 }
