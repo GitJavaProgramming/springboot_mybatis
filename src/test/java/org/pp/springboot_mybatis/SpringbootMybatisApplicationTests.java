@@ -72,6 +72,7 @@ class SpringbootMybatisApplicationTests {
     @Transactional
 //    @Rollback(false)
     void validateTransactional() {
+        System.out.println("事务测试：");
         TestUser user = new TestUser();
         user.setUserName("un1");
         user.setPassWord("pw1");
