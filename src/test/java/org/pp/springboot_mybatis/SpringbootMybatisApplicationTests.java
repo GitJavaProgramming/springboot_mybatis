@@ -3,6 +3,7 @@ package org.pp.springboot_mybatis;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.pp.springboot_mybatis.entity.TestUser;
+import org.pp.springboot_mybatis.mq.rabbitMq.direct.Sender;
 import org.pp.springboot_mybatis.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -38,6 +39,14 @@ class SpringbootMybatisApplicationTests {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private Sender sender;
+
+    @Test
+    public void contextLoads() {
+        sender.send();
+    }
 
     @Test
     void loadDataSource() throws SQLException {

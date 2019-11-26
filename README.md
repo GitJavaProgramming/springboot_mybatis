@@ -8,9 +8,12 @@
         mvc整合(RestFul,模板引擎等)
         redis整合
         actuator可视化管理整合
+        RabbitMQ整合
         
         junit测试用例：
             org.pp.springboot_mybatis.SpringbootMybatisApplicationTests
+        RestController测试：    
+            org.pp.springboot_mybatis.controller.UserController
         
         sql文件:
           url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
@@ -18,4 +21,5 @@
         
         redis:
             虚拟机安装centos7 64位 minimal
-            
+        
+        resources:/bak.yml  kafka配置备份    

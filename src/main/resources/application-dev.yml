@@ -29,10 +29,15 @@ spring:
   redis:
     password: Redis!12345
     port: 6379
-    host: 192.168.0.129
+    host: 192.168.0.130
     timeout: 3000
     database: 0
 
+  rabbitmq:
+    host: 192.168.0.130
+    port: 5672
+    username: admin
+    password: admin
 
 mybatis:
   mapper-locations: classpath:mapping/*Mapping.xml
