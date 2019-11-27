@@ -123,9 +123,9 @@ class SpringbootMybatisApplicationTests {
     @Autowired
     private KafkaTemplate kafkaTemplate;
 
+    @Test
     // test: http://localhost:8080/testBoot/kafka/send?message=222
-    public boolean send() {
+    void send() {
         kafkaTemplate.send("testTopic", "this is a message.");
-        return true;
     }
 }
