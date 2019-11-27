@@ -11,8 +11,10 @@ import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
+import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.annotation.Resource;
 import javax.sql.DataSource;
@@ -114,5 +116,16 @@ class SpringbootMybatisApplicationTests {
         stringRedisTemplate.opsForValue().set("testEnv", "redis:testEnvValue");
         String testEnv = stringRedisTemplate.opsForValue().get("testEnv");
         System.out.println("redis查询：" + testEnv);
+    }
+
+
+    /* =============================================kafka============================================= */
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
+
+    // test: http://localhost:8080/testBoot/kafka/send?message=222
+    public boolean send() {
+        kafkaTemplate.send("testTopic", "this is a message.");
+        return true;
     }
 }

@@ -55,13 +55,14 @@ public class UserController {
     }
 
     /* =============================================kafka============================================= */
-//    @Autowired
-//    private KafkaTemplate<String, Object> kafkaTemplate;
-//
-//    @GetMapping("/kafka/send")
-//    public boolean send(@RequestParam String message) {
-//        kafkaTemplate.send("testTopic", message);
-//        return true;
-//    }
+    @Autowired
+    private KafkaTemplate kafkaTemplate;
+
+    // test: http://localhost:8080/testBoot/kafka/send?message=222
+    @GetMapping("/kafka/send")
+    public boolean send(@RequestParam String message) {
+        kafkaTemplate.send("testTopic", message);
+        return true;
+    }
 
 }

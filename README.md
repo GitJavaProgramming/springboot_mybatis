@@ -9,6 +9,7 @@
         redis整合
         actuator可视化管理整合
         RabbitMQ整合
+        Kafka整合
         
         junit测试用例：
             org.pp.springboot_mybatis.SpringbootMybatisApplicationTests
