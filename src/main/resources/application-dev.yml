@@ -6,8 +6,8 @@ spring:
   datasource:
     # mysql连接
     username: root
-    password: 123456abAB&
-    url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    password: 123456-abAB
+    url: jdbc:mysql://192.168.0.132:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     driver-class-name: com.mysql.cj.jdbc.Driver
     # 数据库连接池
     # 使用druid数据源
@@ -77,7 +77,7 @@ spring:
       #listner负责ack，每调用一次，就立即commit
       ack-mode: manual_immediate
 
-
+# JPA/Mybatis&hibernate
 mybatis:
   mapper-locations: classpath:mapping/*Mapping.xml
   type-aliases-package: org.pp.springboot_mybatis.entity
@@ -89,6 +89,9 @@ management:
     port: 9001
   #修改访问路径  2.0之前默认是/   2.0默认是 /actuator  可以通过这个属性值修改
   endpoints:
+#    default:
+#      web:
+#        enabled: true
     web:
       base-path: /actuator
       #开放所有页面节点  默认只开启了health、info两个节点
@@ -103,5 +106,4 @@ management:
 logging:
   level:
     org:
-      pp:
-        mapper: debug
+      pp: debug

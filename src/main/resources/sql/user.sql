@@ -18,8 +18,8 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 -- Table structure for `user`
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
+DROP TABLE IF EXISTS `test_user`;
+CREATE TABLE `test_user` (
   `id` int(32) NOT NULL AUTO_INCREMENT,
   `userName` varchar(32) NOT NULL,
   `passWord` varchar(50) NOT NULL,
@@ -30,5 +30,5 @@ CREATE TABLE `user` (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES ('1', 'admin', '123456', '111111');
-INSERT INTO `user` VALUES ('2', 'zhangp', 'nihao', 'pp');
+INSERT INTO `test_user` VALUES ('1', 'admin', '123456', '111111');
+INSERT INTO `test_user` VALUES ('2', 'zhangp', 'nihao', 'pp');

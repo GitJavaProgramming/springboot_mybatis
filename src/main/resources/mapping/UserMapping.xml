@@ -10,11 +10,12 @@
     </resultMap>
 
     <select id="Sel" resultType="org.pp.springboot_mybatis.entity.TestUser">
-        select * from user where id = #{id}
+        select * from test_user where id = #{id}
     </select>
 
-    <insert id="insertUser" parameterType="org.pp.springboot_mybatis.entity.TestUser" useGeneratedKeys="true" keyProperty="id">
-        insert into user (userName, passWord, realName) values (#{userName}, #{passWord}, #{realName})
+    <insert id="insertUser" parameterType="org.pp.springboot_mybatis.entity.TestUser" useGeneratedKeys="true"
+            keyProperty="id">
+        insert into test_user (userName, passWord, realName) values (#{userName}, #{passWord}, #{realName})
     </insert>
 
 </mapper>
