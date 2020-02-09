@@ -19,6 +19,12 @@
     </properties>
 
     <dependencies>
+        <!-- spring security Oauth2 资源授权机制 -->
+        <dependency>
+            <groupId>org.springframework.security.oauth</groupId>
+            <artifactId>spring-security-oauth2</artifactId>
+            <version>2.2.1.RELEASE</version>
+        </dependency>
         <!-- springboot security J2EE安全解决方案 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
