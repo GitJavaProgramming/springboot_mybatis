@@ -19,6 +19,17 @@
     </properties>
 
     <dependencies>
+        <!-- swagger接口文档 -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>2.9.2</version>
+        </dependency>
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.9.2</version>
+        </dependency>
         <!-- spring security Oauth2 资源授权机制 -->
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
@@ -46,10 +57,10 @@
             <artifactId>spring-boot-starter-amqp</artifactId>
         </dependency>
         <!-- springboot 可视化监控 -->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+        </dependency>-->
         <!-- springboot redis集成 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
