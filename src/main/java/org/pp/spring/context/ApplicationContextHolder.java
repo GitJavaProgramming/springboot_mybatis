@@ -1,4 +1,4 @@
-package org.pp.context;
+package org.pp.spring.context;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.InitializingBean;

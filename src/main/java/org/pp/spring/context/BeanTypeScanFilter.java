@@ -1,4 +1,4 @@
-package org.pp.context;
+package org.pp.spring.context;
 
 import org.springframework.core.type.ClassMetadata;
 import org.springframework.core.type.classreading.MetadataReader;

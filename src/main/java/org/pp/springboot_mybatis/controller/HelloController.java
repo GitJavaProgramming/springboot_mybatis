@@ -1,6 +1,5 @@
 package org.pp.springboot_mybatis.controller;
 
-import org.pp.context.ApplicationContextHolder;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 

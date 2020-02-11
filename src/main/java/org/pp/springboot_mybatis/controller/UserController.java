@@ -1,6 +1,6 @@
 package org.pp.springboot_mybatis.controller;
 
-import org.pp.context.IgnoreScanBean;
+import org.pp.spring.context.IgnoreScanBean;
 import org.pp.springboot_mybatis.mq.rabbitMq.direct.Sender;
 import org.pp.springboot_mybatis.mq.rabbitMq.fanout.FanoutSender;
 import org.pp.springboot_mybatis.mq.rabbitMq.topic.TopicSender;
