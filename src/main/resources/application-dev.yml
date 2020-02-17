@@ -26,11 +26,11 @@ spring:
     poolPreparedStatements: true
     maxOpenPreparedStatements: 20
 
-  security:
-    user:
-      name: pengpeng
-      password: 123
-      roles: admin
+#  security:
+#    user:
+#      name: pengpeng
+#      password: 123
+#      roles: admin
 
 #  redis:
 #    password: Redis!12345
@@ -38,11 +38,8 @@ spring:
 #    host: 192.168.0.131
 #    timeout: 3000
 #    database: 0
-#    #默认使用的实现
-#    lettuce:
-#      pool:
-#        max-active:
-#
+
+
 #  rabbitmq:
 #    host: 192.168.0.131
 #    port: 5672
