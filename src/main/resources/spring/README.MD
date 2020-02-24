@@ -7,3 +7,19 @@
 ### BeanFactory FactoryBean
 ### 那些注解
 ### 组件扩展（web security orm tx rmi...）
+
+    资源的加载，注册和解析
+    
+    Reader - Registry - loadBeanDefinitions
+    
+    public abstract class AbstractBeanDefinitionReader implements BeanDefinitionReader, EnvironmentCapable
+    
+    AbstractBeanDefinitionReader (org.springframework.beans.factory.support)
+    PropertiesBeanDefinitionReader (org.springframework.beans.factory.support)
+    GroovyBeanDefinitionReader (org.springframework.beans.factory.groovy)
+    XmlBeanDefinitionReader (org.springframework.beans.factory.xml)
+    
+    public XmlBeanDefinitionReader(BeanDefinitionRegistry registry)
+    public int loadBeanDefinitions(Resource resource) throws BeanDefinitionStoreException
+    public int registerBeanDefinitions(Document doc, Resource resource) throws BeanDefinitionStoreException
+    documentReader.registerBeanDefinitions(doc, createReaderContext(resource));
