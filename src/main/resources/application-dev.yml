@@ -32,12 +32,18 @@ spring:
 #      password: 123
 #      roles: admin
 
-#  redis:
-#    password: Redis!12345
-#    port: 6379
-#    host: 192.168.0.131
-#    timeout: 3000
-#    database: 0
+  redis:
+    password: Redis!12345
+    port: 6379
+    host: 192.168.0.131
+    timeout: 3000
+    database: 0
+    jedis:
+      pool:
+        max-idle: 6
+        max-active: 32
+        max-wait: 100
+        min-idle: 4
 
 
   rabbitmq:
