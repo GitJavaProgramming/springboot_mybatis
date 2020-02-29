@@ -15,7 +15,7 @@ public class TopicConfigure {
     @Bean
     public KafkaAdmin admin() {
         Map<String, Object> configs = new HashMap<>();
-        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.0.131:9092");
+        configs.put(AdminClientConfig.BOOTSTRAP_SERVERS_CONFIG, "192.168.0.132:9092");
         return new KafkaAdmin(configs);
     }
 

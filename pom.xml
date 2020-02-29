@@ -16,9 +16,19 @@
 
     <properties>
         <java.version>1.8</java.version>
+        <v.alibaba.fastjson>1.2.58</v.alibaba.fastjson>
+        <v.alibaba.druid>1.1.4</v.alibaba.druid>
+        <v.io.springfox>2.9.2</v.io.springfox>
+        <v.spring-security-oauth2>2.2.5.RELEASE</v.spring-security-oauth2>
+        <v.org.mybatis.spring.boot>2.1.1</v.org.mybatis.spring.boot>
     </properties>
 
     <dependencies>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${v.alibaba.fastjson}</version>
+        </dependency>
         <!--<dependency>
             <groupId>org.pp</groupId>
             <artifactId>starter</artifactId>
@@ -28,18 +38,18 @@
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger2</artifactId>
-            <version>2.9.2</version>
+            <version>${v.io.springfox}</version>
         </dependency>
         <dependency>
             <groupId>io.springfox</groupId>
             <artifactId>springfox-swagger-ui</artifactId>
-            <version>2.9.2</version>
+            <version>${v.io.springfox}</version>
         </dependency>
         <!-- spring security Oauth2 资源授权机制 -->
         <dependency>
             <groupId>org.springframework.security.oauth</groupId>
             <artifactId>spring-security-oauth2</artifactId>
-            <version>2.2.5.RELEASE</version>
+            <version>${v.spring-security-oauth2}</version>
         </dependency>
         <!-- springboot security J2EE安全解决方案 -->
         <dependency>
@@ -88,13 +98,13 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>2.1.1</version>
+            <version>${v.org.mybatis.spring.boot}</version>
         </dependency>
         <!-- springboot mysql jdbc druid -->
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid</artifactId>
-            <version>1.1.4</version>
+            <version>${v.alibaba.druid}</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
