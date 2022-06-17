@@ -16,7 +16,7 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <v.alibaba.fastjson>1.2.58</v.alibaba.fastjson>
+        <v.alibaba.fastjson>1.2.83</v.alibaba.fastjson>
         <v.alibaba.druid>1.1.4</v.alibaba.druid>
         <v.io.springfox>2.9.2</v.io.springfox>
         <v.spring-security-oauth2>2.2.5.RELEASE</v.spring-security-oauth2>
