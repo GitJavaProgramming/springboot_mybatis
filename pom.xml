@@ -18,7 +18,7 @@
         <java.version>1.8</java.version>
         <v.alibaba.fastjson>1.2.58</v.alibaba.fastjson>
         <v.alibaba.druid>1.1.4</v.alibaba.druid>
-        <v.io.springfox>2.9.2</v.io.springfox>
+        <v.io.springfox>2.10.0</v.io.springfox>
         <v.spring-security-oauth2>2.2.5.RELEASE</v.spring-security-oauth2>
         <v.org.mybatis.spring.boot>2.1.1</v.org.mybatis.spring.boot>
     </properties>
